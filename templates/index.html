@@ -7,29 +7,3 @@
 {% block body %} 
 <h1>Apple Products Pricing</h1>
 {% endblock %}
-
-<br>
-<h1>Data</h1>
-<br>
-<table>
-    <thead>
-        <tr>
-            <th>Select</th>
-            {% if column_names %}
-            {% for column_name in column_names %}
-                <th>{{ column_name }}</th>
-            {% endfor %}
-            {% endif %}
-        </tr>
-    </thead>
-    <tbody>
-        {% for row in data %}
-            <tr>
-                <td><input type="checkbox" name="selected_price" value="{{ row[0] }}"></td>
-                {% for cell in row %}
-                    <td>{{ cell }}</td>
-                {% endfor %}
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>

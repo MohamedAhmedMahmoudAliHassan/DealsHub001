@@ -9,12 +9,12 @@ app = Flask(__name__)
 def home():
     #return render_template('index.html') 
     data, column_names = select_price()
-    return render_template('index.html', data=data, column_names=column_names)
+    return render_template('index.html')
 
 @app.route('/select_price')
 def select_price1():
        data, column_names = select_price()
-       return render_template('index.html', data=data, column_names=column_names)
+       return render_template('get_prices.html', data=data, column_names=column_names)
 
 if __name__ == "__main__":
     app.run(debug=True)
